@@ -17,6 +17,9 @@ local naughty = require("naughty")
 local ruled = require("ruled")
 local menubar = require("menubar")
 local hotkeys_popup = require("awful.hotkeys_popup")
+-- Keybinds and mousebinds
+local keys = require("keys")
+--helper()
 local helpers = require("helpers")
 -- Enable hotkeys help widget for VIM and other apps
 -- when client with a matching name is opened:
@@ -36,7 +39,7 @@ end)
 
 -- {{{ Variable definitions
 -- Themes define colours, icons, font and wallpapers.
-beautiful.init(gears.filesystem.get_configuration_dir() .. "theme/mytheme.lua")
+beautiful.init(gears.filesystem.get_configuration_dir() .. "theme/holyplace.lua")
 beautiful.useless_gap = 4
 
 -- This is used later as the default terminal and editor to run.
@@ -287,8 +290,6 @@ awful.keyboard.append_global_keybindings({
               {description = "run prompt", group = "launcher"}),
     awful.key({ modkey }, "p", function() menubar.show() end,
               {description = "show the menubar", group = "launcher"}),
-    awful.key({modkey}, "d", function() awful.spawn.with_shell("rofi -show drun &>> /tmp/rofi.log") end,
-     { }),
 })
 
 -- Tags related keybindings
@@ -362,44 +363,6 @@ awful.keyboard.append_global_keybindings({
               {description = "select next", group = "layout"}),
     awful.key({ modkey, "Shift"   }, "space", function () awful.layout.inc(-1)                end,
               {description = "select previous", group = "layout"}),
-              
-              
-              --brightness keys
-
-              awful.key( { }, "XF86MonBrightnessDown",
-        function()
-            awful.spawn.with_shell("light -U 10")
-        end,
-        {description = "decrease brightness", group = "brightness"}),
-    awful.key( { }, "XF86MonBrightnessUp",
-        function()
-            awful.spawn.with_shell("light -A 10")
-        end,
-        {description = "increase brightness", group = "brightness"}),
-
-------power key
-awful.key({modkey }, "XF86PowerOff",
-function ()
-    exit_screen_show()
-end,
-{description = "quit awesome", group = "awesome"}),
-
--- Volume Control with volume keys
-awful.key( { }, "XF86AudioMute",
-function()
-    helpers.volume_control(0)
-end,
-{description = "(un)mute volume", group = "volume"}),
-awful.key( { }, "XF86AudioLowerVolume",
-function()
-    helpers.volume_control(-5)
-end,
-{description = "lower volume", group = "volume"}),
-awful.key( { }, "XF86AudioRaiseVolume",
-function()
-    helpers.volume_control(5)
-end,
-{description = "raise volume", group = "volume"}),
 
 
 })
