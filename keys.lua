@@ -2,16 +2,9 @@ local awful = require("awful")
 local helpers = require("helpers")
 local keys = {}
 
--- Mod keys
--- superkey = "Mod4"
--- altkey = "Mod1"
--- ctrlkey = "Control"
--- shiftkey = "Shift"
 modkey = "Mod4"
 
-
 awful.keyboard.append_global_keybindings({
-
 --Rofi
 awful.key({modkey}, "space", function() awful.spawn.with_shell("rofi -show drun") end,
      { }),
@@ -53,7 +46,4 @@ awful.key({ }, "XF86PowerOff",
         end,
         {description = "raise volume", group = "volume"}),
     })
-        -- Set root (desktop) keys
-
-
         return keys
