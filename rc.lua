@@ -609,3 +609,7 @@ end)
 client.connect_signal("mouse::enter", function(c)
     c:activate { context = "mouse_enter", raise = false }
 end)
+
+-- Autostart applications
+awful.spawn.with_shell("~/.config/awesome/autostart.sh")
+awful.spawn.with_shell("picom -b --config  $HOME/.config/awesome/picom.conf")
