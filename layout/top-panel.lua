@@ -9,6 +9,18 @@ local mat_icon_button = require('widget.material.icon-button')
 local mat_icon = require('widget.material.icon')
 local dpi = require('beautiful').xresources.apply_dpi
 local icons = require('theme.icons')
+require("widget.material.slider")
+require("widget.material.list-item")
+--widgets
+local battery_widget = require("widget.battery.init")
+local brightness = require("widget.brightness.brightness-slider")
+local cpu_meter = require("widget.cpu.cpu-meter")
+local ram_meter = require("widget.ram.ram-meter")
+local temperature = require("widget.temperature.temperature-meter")
+local volume_slider = require("widget.volume.volume-slider")
+local wifi_strength = require("widget.wifi.init")
+local package = require("widget.package-updater.init")
+local harddrive = require("widget.harddrive.harddrive-meter")
 
 -- Titus - Horizontal Tray
 local systray = wibox.widget.systray()
@@ -129,11 +141,21 @@ local TopPanel = function(s)
       nil,
       {
         layout = wibox.layout.fixed.horizontal,
-        wibox.container.margin(systray, dpi(3), dpi(3), dpi(6), dpi(3)),
+        wibox.container.margin(systray, dpi(2), dpi(3), dpi(6), dpi(3)),
         -- Layout box
         LayoutBox(s),
         -- Clock
         clock_widget,
+        --battery_widget,
+      --brightness,
+      --cpu_meter,
+      --ram_meter,
+      --temperature,
+      --volume_slider,
+      --wifi_strength,
+      --package,
+      --harddrive,
+
       }
     }
 
