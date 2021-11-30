@@ -23,10 +23,27 @@ local package = require("widget.package-updater.init")
 local harddrive = require("widget.harddrive.harddrive-meter")
 
 -- Titus - Horizontal Tray
-local systray = wibox.widget.systray()
-  systray:set_horizontal(true)
-  systray:set_base_size(20)
-  systray.forced_height = 20
+-- local systray = wibox.widget.systray()
+--   systray:set_horizontal(true)
+--   systray:set_base_size(30)
+--   systray.forced_height = 20
+
+beautiful.bg_systray = "#1d2021"
+beautiful.systray_icon_spacing = 10
+local systray = wibox.widget {
+  {
+      wibox.widget.systray(),
+      left   = 10,
+      top    = 2,
+      bottom = 4,
+      right  = 10,
+      widget = wibox.container.margin,
+  },
+   bg         = "#1d2021",
+   shape      = gears.shape.rounded_rect,
+   shape_clip = true,
+   widget     = wibox.container.background,
+}
 
   -- Clock / Calendar 24h format
 -- local textclock = wibox.widget.textclock('<span font="Roboto Mono bold 9">%d.%m.%Y\n     %H:%M</span>')
