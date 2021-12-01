@@ -28,12 +28,15 @@ local widget =
   {
     id = 'icon',
     widget = wibox.widget.imagebox,
+    markup = 'This <i>is</i> a <b>textbox</b>!!!',
+    align  = 'center',
+    valign = 'center',
     resize = true
   },
   layout = wibox.layout.fixed.horizontal
 }
 
-local widget_button = clickable_container(wibox.container.margin(widget, dpi(14), dpi(14), 4, 4))
+local widget_button = clickable_container(wibox.container.margin(widget, dpi(4), dpi(4), 4, 4))
 widget_button:buttons(
   gears.table.join(
     awful.button(

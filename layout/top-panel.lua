@@ -159,18 +159,19 @@ local TopPanel = function(s)
         LayoutBox(s),
         -- Clock
         clock_widget,
-        --battery_widget,
+        battery_widget,
       --brightness,
-      --cpu_meter,
-      --ram_meter,
-      --temperature,
+      -- cpu_meter,
+      -- ram_meter,
+      -- temperature,
       --volume_slider,
-      --wifi_strength,
+      wifi_strength,
       --package,
       --harddrive,
 
       }
     }
+    
 
   return panel
 end
