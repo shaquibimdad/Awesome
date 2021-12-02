@@ -332,14 +332,14 @@ local globalKeys =
   --   end,
   --   {description = 'toggle mute', group = 'hotkeys'}
   -- ),
-  awful.key(
-    {},
-    'XF86PowerDown',
-    function()
-      --
-    end,
-    {description = 'toggle mute', group = 'hotkeys'}
-  ),
+  -- awful.key(
+  --   {},
+  --   'XF86PowerDown',
+  --   function()
+  --     --
+  --   end,
+  --   {description = 'toggle mute', group = 'hotkeys'}
+  -- ),
   awful.key(
     {},
     'XF86PowerOff',
